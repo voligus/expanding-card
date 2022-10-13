@@ -38,6 +38,10 @@ function Cardbox() {
   function onclick(name) {
     const newcards = cards.map((card) => {
       if (card.name === name) {
+        if(card.state === "active")
+        {
+          return {...card,state:"unactive"}
+        }
         return { ...card, state: "active" };
       } else {
         return { ...card, state: "unactive" };
